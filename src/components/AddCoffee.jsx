@@ -1,6 +1,10 @@
 import React from "react";
 
 const AddCoffee = () => {
+  const handleAddCoffee = (e) => {
+    e.preventDefault();
+    const form = e.target;
+  };
   return (
     <div className="p-24">
       <div className="p-12 text-center space-y-4">
@@ -13,7 +17,7 @@ const AddCoffee = () => {
         </p>
       </div>
 
-      <form>
+      <form onSubmit={handleAddCoffee}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
             <label className="label">Name</label>
