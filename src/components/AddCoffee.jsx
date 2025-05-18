@@ -4,6 +4,9 @@ const AddCoffee = () => {
   const handleAddCoffee = (e) => {
     e.preventDefault();
     const form = e.target;
+    const formData = new FormData(form);
+    const coffeeData = Object.fromEntries(formData.entries());
+    console.log(coffeeData);
   };
   return (
     <div className="p-24">
@@ -29,12 +32,12 @@ const AddCoffee = () => {
             />
           </fieldset>
           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
-            <label className="label">Chef</label>
+            <label className="label">Quantity</label>
             <input
               type="text"
-              name="chef"
+              name="quantity"
               className="input w-full"
-              placeholder="Chef Name"
+              placeholder="Quantity Name"
             />
           </fieldset>
           <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
